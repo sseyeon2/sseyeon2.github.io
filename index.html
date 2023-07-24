@@ -5,500 +5,601 @@
     <meta http-equiv="Content-Type" content="text/html charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" id="Viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-    <title>soldoc-basic</title>
-    <link href="css/slick.css" rel="stylesheet">
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
-    <script src="js/slick.js" type="text/javascript"></script>
-    <script src="js/custom.js" type="text/javascript"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q34CMR3Q8E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q34CMR3Q8E');
+    </script>
+    <title>sema웹진</title>
+    <link href="https://www.sema.or.kr/webzine/202306/css/slick.css" rel="stylesheet">
+    <link href="https://www.sema.or.kr/webzine/202306/css/common.css" rel="stylesheet">
+    <link href="https://www.sema.or.kr/webzine/202306/css/style.css" rel="stylesheet">
+    <script src="https://www.sema.or.kr/webzine/202306/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="https://www.sema.or.kr/webzine/202306/js/slick.js" type="text/javascript"></script>
+    <script src="https://www.sema.or.kr/webzine/202306/js/custom.js" type="text/javascript"></script>
 </head>
 <script>
-    /*클릭 오픈 리스트*/
-    document.addEventListener("DOMContentLoaded", function () {
-        const slides = document.querySelectorAll(".list li");
-        const images = document.querySelectorAll(".box li");
-
-        let slideIndex = 0;
-        showSlide(slideIndex);
-
-    function showSlide(index) {
-        slides.forEach((slide) => slide.classList.remove("on"));
-        slides[index].classList.add("on");
-
-        images.forEach((image) => image.classList.remove("on"));
-        images[index].classList.add("on");
-    }
-
-        // Add click event listeners to each slide
-        slides.forEach((slide, index) => {
-            slide.addEventListener("click", function () {
-                slideIndex = index;
-                showSlide(slideIndex);
-            });
-        });
+    $(window).scroll(function(){
+        var scroll_top  = $(window).scrollTop();
+        var main_h    = $(".main_banner").height() - 40;
+        if(scroll_top >= main_h){
+            $(".gnb_wrap").addClass('fixed');
+        } else {
+            $(".gnb_wrap").removeClass('fixed');
+        }
     });
-
+    $(document).ready(function($){
+        $('.mo_gnb_wrap .btn_mo_menu').click(function(){
+            if( $('.mo_gnb_wrap .mo_gnb').hasClass('on')){
+                $('.mo_gnb_wrap .mo_gnb').removeClass('on');
+            } else{
+                $('.mo_gnb_wrap .mo_gnb').addClass('on');
+            }
+        });
+        $('.mo_gnb_wrap .btn_mo_menu').click(function(){
+            if( $(this).hasClass('change')){
+                $(this).removeClass('change');
+            } else{
+                $(this).addClass('change');
+            }
+        });  
+    });
 </script>
 <body>
     <div class="wrap">
-        <header>
-            <div class="gnb">
-                <h1 class="logo">
-                    <a href="javascript:;">
-                        <img src="images/logo.png" alt="메인로고">
-                    </a>
-                </h1>
-                <div class="btn-app">
-                    <a href="javascript:;" class="fw-600 fs-18 fc-w">솔닥 베이직 신청하기</a>
+        <section class="main_banner top_banner">
+            <div class="publication_num">
+                <div class="publication_num_inner">
+                    <span class="cl_f">SEMA WEBZINE<br>웹진 VOL.117</span>
+                    <h1 class="logo"><a href="index_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/logo.png" alt="세마 로고"></a></h1>
+                    <div class="mo_gnb_wrap">
+                        <div class="btn_mo_menu">
+                            <a href="javascript:;">
+                                <div class="bar1 bar"></div>
+                                <div class="bar2 bar"></div>
+                                <div class="bar3 bar"></div>
+                            </a>
+                        </div>
+                        <ul class="mo_gnb">
+                            <li class="mo_menu"><a href="javascript:;">Special Issue</a>
+                                <ul class="sub">
+                                    <li><a href="sub1_1_view.html">SEMA 스페셜</a></li>
+                                    <li><a href="sub1_2_view.html">쉽게 보는 상품</a></li>
+                                </ul>
+                            </li>
+                            <li class="mo_menu"><a href="javascript:;">Inside SEMA</a>
+                                <ul class="sub">
+                                    <li><a href="sub2_1_view.html">SEMA 사람들</a></li>
+                                    <li><a href="sub2_2_view.html">SEMA는 지금1</a></li>
+                                    <li><a href="sub2_3_view.html">SEMA는 지금2</a></li>
+                                </ul>
+                            </li>
+                            <li class="mo_menu"><a href="javascript:;">SEMA Plus</a>
+                                <ul class="sub">
+                                    <li><a href="sub3_1_view.html">행복한 S빌리지</a></li>
+                                    <li><a href="sub3_2_view.html">반가운 새 가족</a></li>
+                                </ul>
+                            </li>
+                            <li class="mo_menu"><a href="javascript:;">Life & Culture</a>
+                                <ul class="sub">
+                                    <li><a href="sub4_1_view.html">S-만물상회</a></li>
+                                    <li><a href="sub4_2_view.html">이 달의 추천</a></li>
+                                </ul>
+                            </li>
+                            <li class="mo_menu"><a href="javascript:;">Enjoy SEMA</a>
+                                <ul class="sub">
+                                    <li><a href="sub5_1_view.html">동행 퀴즈</a></li>
+                                    <li><a href="sub5_2_view.html">SEMA가 있어 좋다</a></li>
+                                    <!--<li><a href="sub5_3_view.html">SEMA 와 함께하는 행복여행</a></li>-->
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </header>
-        <section class="main-cont section">
-            <div class="section-inner">
-                <div class="cont">
-                    <div class="txt">
-                        <h2 class="fc-w">의료진을 위한 <br>
-                            비대면 진료의 시작
-                        </h2>
-                        <p class="fc-w"><span class="fw-600">대면-비대면 진료 연계 자동화 서비스, 솔닥 베이직</span> <br>
-                            탁월한 진료 경험으로 강력한 매출 상승을 일으키세요
-                        </p>
-                    </div>
-                    <div class="btn-main"><a href="javascript:;" class="fc-w fw-500">솔닥 베이직 신청하기</a></div>
+            <div class="main_slide_wrap">
+                <div class="arrow_wrap">
+                    <div class="prev"><img src="https://www.sema.or.kr/webzine/202306/images/main/arrow_prev.png" alt="슬라이드 왼쪽 화살표"></div>
+                    <div class="next"><img src="https://www.sema.or.kr/webzine/202306/images/main/arrow_next.png" alt="슬라이드 오른쪽 화살표"></div>
                 </div>
-            </div>
-        </section>
-        <!--main2-->
-        <section class="intro-cont section">
-            <div class="section-inner">
-                <div class="cont">
-                    <div class="txt">
-                        <h2>솔닥 베이직을 소개합니다</h2>
-                        <span class="f-point">솔닥 베이직이란?</span>
-                        <p>솔닥 베이직은 우리 병원 환자에게 비대면 진료를 연결하는 <br>
-                            <b class="fw-600">가장 빠르고 간편한 진료 연계 자동화 서비스</b>입니다. <br>
-                            환자가 의료진 모두에게 쉽고 편한 솔닥 베이직으로 환자와의 만남을 이어가세요.
-                        </p>
-                    </div>
-                    <ul class="box-wrap">
-                        <li>
-                            <div class="box-inner">
-                                <div class="icon"><img src="images/intro_icon1.png" alt="편지 아이콘"></div>
-                                <p class="box-txt">우리 병원 대면 진료 환자에게 <br>솔닥 베이직 비대면 진료 링크를 전달하세요</p>
+                <ul class="main_slide">
+                    <li class="slide slide_1">
+                        <div class="slide_inner">
+                            <div class="main_txt_wrap cl_f">
+                                <h4>Special Issue <span>SEMA 스페셜</span></h4>
+                                <h1>과학기술인공제회가 꿈꾸는 미래, <br>‘N-SEMA 2033’</h1>
+                                <p>2003년 과학기술인의 생활 안정과 복지증진을 위해 설립된 과학기술인공제회(SEMA)가
+                                    올해로 20주년을 맞았다. SEMA는 20년간 공제급여, 과학기술인연금 등 다양한 생활 안정 사업과
+                                    복지서비스를 운영하며 과학기술인을 위해 쉼 없이 달려왔다.···</p>
+                                <span class="bt_detail"><a href="sub1_1_view.html">기사 보러가기</a></span>
                             </div>
-                        </li>
-                        <li>
-                            <div class="box-inner">
-                                <div class="icon"><img src="images/intro_icon2.png" alt="휴대폰 터치 아이콘"></div>
-                                <p class="box-txt">전송된 링크 클릭으로 쉽고 간편하게 <br>솔닥 비대면 진료를 예약할 수 있습니다</p>
+                        </div>
+                    </li>
+                    <li class="slide slide_2">
+                        <div class="slide_inner">
+                            <div class="main_txt_wrap cl_f">
+                                <h4>Special Issue <span>쉽게 보는 상품</span></h4>
+                                <h1>노후를 풍요롭게 준비하는 적금, <br>적립형공제급여 </h1>
+                                <p>과학기술인공제회의 적립형공제급여를 알아보세요.</p>
+                                <span class="bt_detail"><a href="sub1_2_view.html">기사 보러가기</a></span>
                             </div>
-                        </li>
-                        <li>
-                            <div class="box-inner">
-                                <div class="icon"><img src="images/intro_icon3.png" alt="QR코드 아이콘"></div>
-                                <p class="box-txt">환자가 QR코드를 스캔하는 방법으로 <br>직접 예약할 수도 있습니다</p>
+                        </div>
+                    </li>
+                    <li class="slide slide_3">
+                        <div class="slide_inner">
+                            <div class="main_txt_wrap cl_f">
+                                <h4>Inside SEMA <span>SEMA 사람들</span></h4>
+                                <h1>대덕복지센터가 제 역할을 할 수 있도록 <br>
+                                    든든히 지원하는 대덕복지센터 총무팀</h1>
+                                <p>회사에 필요하지 않은 부서는 없지만, 없으면 안 되는 부서는 있다. 바로 총무팀이다.
+                                    회사의 기본적인 비품 구입부터 각종 업무 지원과 근무환경 관리, 복지 지원 등을 통해 직원들이
+                                    회사 생활을 잘할 수 있도록 도와주는 곳이기 때문이다. 대덕복지센터 총무팀도 마찬가지다.···</p>
+                                <span class="bt_detail"><a href="sub2_1_view.html">기사 보러가기</a></span>
                             </div>
-                        </li>
-                        <li>
-                            <div class="box-inner">
-                                <div class="icon"><img src="images/intro_icon4.png" alt="청진기 아이콘(비대면 진료)"></div>
-                                <p class="box-txt">다음 진료는 솔닥 비대면 진료로 <br>환자와의 만남을 이어가세요</p>
+                        </div>
+                    </li>
+                    <li class="slide slide_4">
+                        <div class="slide_inner">
+                            <div class="main_txt_wrap cl_f">
+                                <h4>Inside SEMA <span>SEMA는 지금1</span></h4>
+                                <h1>과학기술인공제회, <br>
+                                    창립 20주년 맞아 과학기술인 복지증진 <br>
+                                    유공자 초청 기념식 개최</h1>
+                                <!-- <p>대한민국은 고령화 사회를 넘어 고령사회로 진입했다. <br>
+                                    2023년 2월을 기준으로 고령 인구 비율은 18.2%에 달하고, 65세 이상 인구는 935만 명이나 된다. <br>
+                                    지난해 2월과 비교해 전체 인구는 40만 명이 감소했지만, 고령 인구는 무려 80만 명이 많아졌다.···</p> -->
+                                <span class="bt_detail"><a href="sub2_2_view.html">기사 보러가기</a></span>
                             </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="result-cont section">
-            <div class="section-inner">
-                <div class="cont">
-                    <div class="txt">
-                        <h2>솔닥 베이직으로 경험하는 <br>놀라운 매출 성과</h2>
-                        <p>최소한의 비용으로 마케팅 툴보다 놀라운 매출 효과를 누려보세요</p>
-                    </div>
-                    <div class="card-wrap">
-                        <ul>
-                            <li class="card card1 fc-w">
-                                <div class="card-inner">
-                                    <p>기존 환자, 우리 병원으로 <br>재진을 유도합니다</p>
-                                    <span>기존 대면 환자의 이탈을 방지합니다. <br>대면 진료가 번거로운 우리 병원 고객, 비대면진료로 확실하게 Lock-In 하세요.</span>
-                                </div>
-                            </li>
-                            <li class="card card2">
-                                <div class="card-inner">
-                                    <p>과열 경쟁으로 인한 <br>환자 유실 방지</p>
-                                    <span>마케팅에 시간과 비용을 쏟지 않도록 <br>의료 본질에 집중할 수 있는 환경을 제공합니다</span>
-                                </div>
-                            </li>
-                            <li class="card card3">
-                                <div class="card-inner">
-                                    <p>부담스러운 추가 비용은 <br>없습니다</p>
-                                    <span>합리적인 월 구독료로 <br>모든 서비스를 무제한으로 경험하세요</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section> 
-        <section class="explan-cont section">
-            <div class="section-inner">
-                <div class="cont">
-                    <div class="txt">
-                        <h2>모든 번거로움을 걷어낸 <br>
-                            가장 쉬운 비대면진료
-                        </h2>
-                        <p>더 편한 진료의 시작, 솔닥 베이직의 독보적인 기능을 확인하세요</p>
-                    </div>
-                    <div class="slide-wrap">
-                        <ul class="list">
-                            <li class="on">
-                                <a href="javascript:;">
-                                    <p>프로그램 설치 없는 <br>온라인 서비스</p>
-                                    <span>별도 프로그램 설치 없이 모든 디바이스에서 <br>웹으로 진료와 처방을 할 수 있습니다.</span>
-                                </a>
-                                <div class="m-box-img"><img src="images/explan-box-img1.png" alt=""></div>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <p>독보적인 타임 슬롯 기능</p>
-                                    <span>별도 프로그램 설치 없이 모든 디바이스에서 <br>웹으로 진료와 처방을 할 수 있습니다.</span>
-                                </a>
-                                <div class="m-box-img"><img src="images/explan-box-img2.png" alt=""></div>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <p>모바일 예진지 기능</p>
-                                    <span>별도 프로그램 설치 없이 모든 디바이스에서 <br>웹으로 진료와 처방을 할 수 있습니다.</span>
-                                </a>
-                                <div class="m-box-img"><img src="images/explan-box-img3.png" alt=""></div>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <p>각종 서류 발급 자동화</p>
-                                    <span>별도 프로그램 설치 없이 모든 디바이스에서 <br>웹으로 진료와 처방을 할 수 있습니다.</span>
-                                </a>
-                                <div class="m-box-img"><img src="images/explan-box-img4.png" alt=""></div>
-                            </li>
-                        </ul>
-                        <ul class="box">
-                            <li><img src="images/explan-box-img1.png" alt=""></li>
-                            <li><img src="images/explan-box-img2.png" alt=""></li>
-                            <li><img src="images/explan-box-img3.png" alt=""></li>
-                            <li><img src="images/explan-box-img4.png" alt=""></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="review-cont section">
-            <div class="section-inner">
-                <div class="txt">
-                    <h2>압도적인 편리함 <br>
-                        솔닥 베이직
-                    </h2>
-                    <p>솔닥 베이직 서비스를 경험해 본 의료진들의 후기</p>
-                </div>
-                <div class="rolling-wrap">
-                    <div class="roll-01">
-                        <ul>
-                            <li>
-                                <img src="images/review-icon1.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        다른 플랫폼은 진료 뜨면 광클하는 경쟁 <br>
-                                        시스템이더라고요.솔닥이 제일 좋아요!
-                                    </p>
-                                    <span>서울 서초 피부과의원</span>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="images/review-icon2.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        비대면 진료 보면 입금부터 처방까지 수기 <br>로
-                                        해야 했는데 한방에 되니 너무 편해요
-                                    </p>
-                                    <span>서울 중랑구 피부과의원</span>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="images/review-icon1.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        비대면 진료 보면 cs 해줄 일이 더 많은데 <br>
-                                        솔닥 쓰면 그런 일이 없습니다
-                                    </p>
-                                    <span>경기 일산시 안과</span>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="images/review-icon2.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        비대면 진료 플랫폼이 제 살 깎아먹기라는 <br>
-                                        인식이 있었는데 그런 인식이 없어졌어요
-                                    </p>
-                                    <span>경기 화성 소아과</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="roll-02">
-                        <ul>
-                            <li>
-                                <img src="images/review-icon1.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        환자 의약품 배송까지 상태를 확인할 수 <br>
-                                        있어서 안심이 되네요
-                                    </p>
-                                    <span>경기 남양주 소아과</span>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="images/review-icon2.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        스케줄 관리가 되서 대면 진료에 영향없이 <br>
-                                        비대면 진료를 볼 수 있어서 좋네요
-                                    </p>
-                                    <span>서울 동대문구 피부과 </span>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="images/review-icon1.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        대면 고객 위주로 비대면 진료를 진행 <br>
-                                        하니 재진률이 크게 늘었습니다
-                                    </p>
-                                    <span>서울 강남구 피부과</span>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="images/review-icon2.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        대면/비대면 진료 차트를 한번에 볼 수 있 <br>
-                                        어 진료의 질이 높아졌습니다.
-                                    </p>
-                                    <span>강원도 원주 가정의학과</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="roll-03">
-                        <ul>
-                            <li>
-                                <img src="images/review-icon1.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        다른 플랫폼은 진료 뜨면 광클하는 경쟁 <br>
-                                        시스템이더라고요.솔닥이 제일 좋아요!
-                                    </p>
-                                    <span>서울 서초 피부과의원</span>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="images/review-icon2.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        비대면 진료 보면 입금부터 처방까지 수기 <br>로
-                                        해야 했는데 한방에 되니 너무 편해요
-                                    </p>
-                                    <span>서울 중랑구 피부과의원</span>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="images/review-icon1.png" alt="">
-                                <div class="box-txt">
-                                    <p>
-                                        비대면 진료 보면 cs 해줄 일이 더 많은데 <br>
-                                        솔닥 쓰면 그런 일이 없습니다
-                                    </p>
-                                    <span>경기 일산시 안과</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="pro-cont section">
-            <div class="section-inner">
-                <div class="cont">
-                    <div class="txt">
-                        <h2>환자와 의사 <br>모두가 편한 솔닥 베이직</h2>
-                    </div>
-                    <div class="notice-wrap">
-                        <ul class="left">
-                            <p class="notice-icon notice-icon1">
-                                <img src="images/pro-icon1.png" alt="">
-                                <span>솔닥 베이직</span>
-                            </p>
-                            <li>매번 병원에 가지 않아도 진료를 보고 약을 처방받을 수 있어요.</li>
-                            <li>나를 잘 아는 의사선생님과 솔닥에서도 진료를 이어 나갈 수 있어요.</li>
-                            <li>비대면 진료를 보더라도, 언제든 병원에 직접 방문할 수 있어요.</li>
-                        </ul>
-                        <ul class="right">
-                            <p class="notice-icon notice-icon2">
-                                <img src="images/pro-icon2.png" alt="">
-                                <span>솔닥 주치의</span>
-                            </p>
-                            <li>자연스러운 재진 유도, 내 환자와 관계를 꾸준히 이어나갈 수 있어요.</li>
-                            <li>솔닥이 자체 개발한 시스템으로 진료 히스토리를 한눈에 볼 수 있어요.</li>
-                            <li>QR코드 하나로 환자의 비대면 진료 예약을 간단하게 도울 수 있어요</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sup-cont section fc-w">
-            <div class="section-inner">
-                <div class="cont">
-                    <div class="txt">
-                        <h2>의료진을 위한 <br>더 나은 비대면진료 솔루션</h2>
-                        <p>비대면 진료의 한계를 넘어 더 탁월한 의료 인프라를 제공합니다.</p>
-                    </div>
-                    <div class="box-wrap">
-                        <ul class="box-inner">
-                            <li>
-                                <img src="images/sup_img1.png" alt="">
-                                <p>대면-비대면 진료 관리를 한 번에</p>
-                                <span>표준화된 진료 경험으로 의사와 환자 모두에게 <br>만족감을 더합니다</span>
-                            </li>
-                            <li>
-                                <img src="images/sup_img2.png" alt="">
-                                <p>모바일 예진지 사전제공</p>
-                                <span>모바일 예진지로 필요한 정보를 미리 수집하세요. <br>
-                                축적되는 진료 데이터를 기반으로 <br>비대면 진료 환자의 라포를 형성할 수 있습니다.</span>
-                            </li>
-                            <li>
-                                <img src="images/sup_img3.png" alt="">
-                                <p>리마인더 알람 방송</p>
-                                <span>재진 시기가 가까운 환자에게 리마인더 메시지를 <br>직접 발송하고 다이렉트로 비대면 예약을 유도하세요.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="slide-box-wrap">
-                        <ul>
-                            <li>
-                                <img src="images/sup_img1.png" alt="">
-                                <p>대면-비대면 진료 관리를 한 번에</p>
-                                <span>표준화된 진료 경험으로 의사와 환자 모두에게 <br>만족감을 더합니다</span>
-                            </li>
-                            <li>
-                                <img src="images/sup_img2.png" alt="">
-                                <p>모바일 예진지 사전제공</p>
-                                <span>모바일 예진지로 필요한 정보를 미리 수집하세요. <br>
-                                축적되는 진료 데이터를 기반으로 <br>비대면 진료 환자의 라포를 형성할 수 있습니다.</span>
-                            </li>
-                            <li>
-                                <img src="images/sup_img3.png" alt="">
-                                <p>리마인더 알람 방송</p>
-                                <span>재진 시기가 가까운 환자에게 리마인더 메시지를 <br>직접 발송하고 다이렉트로 비대면 예약을 유도하세요.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="promotion">     
-                    <div class="txt">
-                        <h2>현재 무제한 무료 프로모션 진행중</h2>
-                        <p>추가 금액 없이 누리는 모든 기능, 지금 바로 만나보세요</p>
-                        <img class="bg-icon" src="images/sup-bg1.png" alt="">
-                    </div>
-                    <div class="btn-main"><a href="javascript:;" class="fc-w fw-500">솔닥 베이직 신청하기</a></div>
-                </div>
-            </div>
-        </section>
-        <section class="faq-cont fc-w">
-            <div class="section-inner">
-                <div class="cont">
-                    <div class="faq-wrap">
-                        <details>
-                            <summary>솔닥 베이직이란 무엇인가요?</summary>
-                            <p>
-                                기존 원내 환자들 중 비대면 진료로 치료 및 경과 유지가 가능한 환자들(경증, 만성질환, 정신과질환, 시술/수술후 케어 등)에게 의료진이 대면진료 후
-                                비대면 진료의새로운 옵션값을 제공하는 서비스입니다.
-                                가령, 3개월 간격으로 원내에서 대면 진료를 통해 고혈압약을 주기적으로 받아가던 혈압이 잘 조절되고 있는 고혈압환자에게 6개월 간격으로 대면진료 및
-                                혈압검사를 권장하고 3개월 간격으로 솔닥 베이직 비대면 진료 서비스를 권할 수 있습니다.
-                            </p>
-                        </details>
-                        <details>
-                            <summary>솔닥 베이직을 쓰면 어떤 점이 좋은가요?</summary>
-                            <p>
-                                기존 원내 환자들 중 비대면 진료로 치료 및 경과 유지가 가능한 환자들(경증, 만성질환, 정신과질환, 시술/수술후 케어 등)에게 의료진이 대면진료 후
-                                비대면 진료의새로운 옵션값을 제공하는 서비스입니다.
-                                가령, 3개월 간격으로 원내에서 대면 진료를 통해 고혈압약을 주기적으로 받아가던 혈압이 잘 조절되고 있는 고혈압환자에게 6개월 간격으로 대면진료 및
-                                혈압검사를 권장하고 3개월 간격으로 솔닥 베이직 비대면 진료 서비스를 권할 수 있습니다.
-                            </p>
-                        </details>
-                        <details>
-                            <summary>의료진은 솔닥 베이직 서비스만 이용할 수 있나요?</summary>
-                            <p>
-                                기존 원내 환자들 중 비대면 진료로 치료 및 경과 유지가 가능한 환자들(경증, 만성질환, 정신과질환, 시술/수술후 케어 등)에게 의료진이 대면진료 후
-                                비대면 진료의새로운 옵션값을 제공하는 서비스입니다.
-                                가령, 3개월 간격으로 원내에서 대면 진료를 통해 고혈압약을 주기적으로 받아가던 혈압이 잘 조절되고 있는 고혈압환자에게 6개월 간격으로 대면진료 및
-                                혈압검사를 권장하고 3개월 간격으로 솔닥 베이직 비대면 진료 서비스를 권할 수 있습니다.
-                            </p>
-                        </details>
-                        <details>
-                            <summary>우리 병원에 대면 진료를 본 환자들만 비대면 진료가 가능한가요?</summary>
-                            <p>
-                                기존 원내 환자들 중 비대면 진료로 치료 및 경과 유지가 가능한 환자들(경증, 만성질환, 정신과질환, 시술/수술후 케어 등)에게 의료진이 대면진료 후
-                                비대면 진료의새로운 옵션값을 제공하는 서비스입니다.
-                                가령, 3개월 간격으로 원내에서 대면 진료를 통해 고혈압약을 주기적으로 받아가던 혈압이 잘 조절되고 있는 고혈압환자에게 6개월 간격으로 대면진료 및
-                                혈압검사를 권장하고 3개월 간격으로 솔닥 베이직 비대면 진료 서비스를 권할 수 있습니다.
-                            </p>
-                        </details>
-                        <details>
-                            <summary>솔닥 베이직을 통해 대부분의 약 처방이 가능한가요?</summary>
-                            <p>
-                                기존 원내 환자들 중 비대면 진료로 치료 및 경과 유지가 가능한 환자들(경증, 만성질환, 정신과질환, 시술/수술후 케어 등)에게 의료진이 대면진료 후
-                                비대면 진료의새로운 옵션값을 제공하는 서비스입니다.
-                                가령, 3개월 간격으로 원내에서 대면 진료를 통해 고혈압약을 주기적으로 받아가던 혈압이 잘 조절되고 있는 고혈압환자에게 6개월 간격으로 대면진료 및
-                                혈압검사를 권장하고 3개월 간격으로 솔닥 베이직 비대면 진료 서비스를 권할 수 있습니다.
-                            </p>
-                        </details>
-                        <details>
-                            <summary>솔닥 베이직은 어떤 의료기관에서 사용이 가능한가요?</summary>
-                            <p>
-                                기존 원내 환자들 중 비대면 진료로 치료 및 경과 유지가 가능한 환자들(경증, 만성질환, 정신과질환, 시술/수술후 케어 등)에게 의료진이 대면진료 후
-                                비대면 진료의새로운 옵션값을 제공하는 서비스입니다.
-                                가령, 3개월 간격으로 원내에서 대면 진료를 통해 고혈압약을 주기적으로 받아가던 혈압이 잘 조절되고 있는 고혈압환자에게 6개월 간격으로 대면진료 및
-                                혈압검사를 권장하고 3개월 간격으로 솔닥 베이직 비대면 진료 서비스를 권할 수 있습니다.
-                            </p>
-                        </details>
-                        <details>
-                            <summary>비용은 어떻게 되나요?</summary>
-                            <p>
-                                기존 원내 환자들 중 비대면 진료로 치료 및 경과 유지가 가능한 환자들(경증, 만성질환, 정신과질환, 시술/수술후 케어 등)에게 의료진이 대면진료 후
-                                비대면 진료의새로운 옵션값을 제공하는 서비스입니다.
-                                가령, 3개월 간격으로 원내에서 대면 진료를 통해 고혈압약을 주기적으로 받아가던 혈압이 잘 조절되고 있는 고혈압환자에게 6개월 간격으로 대면진료 및
-                                혈압검사를 권장하고 3개월 간격으로 솔닥 베이직 비대면 진료 서비스를 권할 수 있습니다.
-                            </p>
-                        </details>
-                    </div>
-                    <div class="btn-faq"><a href="javascript:;">FAQ 더 알아보기</a></div>
-                </div>
-            </div>
-        </section>
-        <footer>
-            <div class="footer-inner">
-                <ul class="private">
-                    <li><a href="javascript:;">솔닥 소개</a></li>
-                    <li><a href="javascript:;">이용약관</a></li>
-                    <li><a href="javascript:;">개인정보방침</a></li>
+                        </div>
+                    </li>
                 </ul>
-                <p class="add">
-                    솔닥   회사명 : 솔닥 주식회사  |  대표 : 김민승, 이호익  |  사업자등록번호 : 284-87-00967  |  통신판매업신고번호 : 2021-서울강남-06329호 <br>
-                    서울특별시 강남구 도산대로 174, 7층(정안빌딩)  |  E-mail : partner@soldoc.co.kr  |  대표번호 : 02-6954-7481  |  개인정보관리자 : 김민승
-                </p>
+                <div class="controler_wrap">
+                    <div class="controler">
+                        <a href="javascript:;" class="stop"><img src="https://www.sema.or.kr/webzine/202306/images/main/stop.png" alt="슬라이드 일시정지"></a></button>
+                        <a href="javascript:;" class="play"><img src="https://www.sema.or.kr/webzine/202306/images/main/play.png" alt="슬라이드 재생"></a></button>
+                    </div>
+                </div>
             </div>
-            <span class="copyright">Copyright ⓒ soldoc.co.kr All rights reserved.</span>
-        </footer>
+            <header>
+                <div class="gnb_wrap">
+                    <ul class="gnb">
+                        <li class="menu">
+                            <a class="line" href="javascript:;">Special Issue</a>
+                            <div class="sub_menu">
+                                <div class="sub_menu_inner">
+                                    <ul class="sub">
+                                        <li><a href="sub1_1_view.html">SEMA 스페셜</a></li>
+                                        <li><a href="sub1_2_view.html">쉽게 보는 상품</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub2_1_view.html">SEMA는 사람들</a></li>
+                                        <li><a href="sub2_2_view.html">SEMA는 지금1</a></li>
+                                        <li><a href="sub2_3_view.html">SEMA는 지금2</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub3_1_view.html">행복한 S빌리지</a></li>
+                                        <li><a href="sub3_2_view.html">반가운 새 가족</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub4_1_view.html">S-만물상회</a></li>
+                                        <li><a href="sub4_2_view.html">이 달의 추천</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub5_1_view.html">동행 퀴즈</a></li>
+                                        <li><a href="sub5_2_view.html">SEMA가 있어 좋다</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu">
+                            <a class="line" href="javascript:;">Inside SEMA</a>
+                            <div class="sub_menu">
+                                <div class="sub_menu_inner">
+                                    <ul class="sub">
+                                        <li><a href="sub1_1_view.html">SEMA 스페셜</a></li>
+                                        <li><a href="sub1_2_view.html">쉽게 보는 상품</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub2_1_view.html">SEMA는 사람들</a></li>
+                                        <li><a href="sub2_2_view.html">SEMA는 지금1</a></li>
+                                        <li><a href="sub2_3_view.html">SEMA는 지금2</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub3_1_view.html">행복한 S빌리지</a></li>
+                                        <li><a href="sub3_2_view.html">반가운 새 가족</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub4_1_view.html">S-만물상회</a></li>
+                                        <li><a href="sub4_2_view.html">이 달의 추천</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub5_1_view.html">동행 퀴즈</a></li>
+                                        <li><a href="sub5_2_view.html">SEMA가 있어 좋다</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu">
+                            <a class="line" href="javascript:;">SEMA Plus</a>
+                            <div class="sub_menu">
+                                <div class="sub_menu_inner">
+                                    <ul class="sub">
+                                        <li><a href="sub1_1_view.html">SEMA 스페셜</a></li>
+                                        <li><a href="sub1_2_view.html">쉽게 보는 상품</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub2_1_view.html">SEMA는 사람들</a></li>
+                                        <li><a href="sub2_2_view.html">SEMA는 지금1</a></li>
+                                        <li><a href="sub2_3_view.html">SEMA는 지금2</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub3_1_view.html">행복한 S빌리지</a></li>
+                                        <li><a href="sub3_2_view.html">반가운 새 가족</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub4_1_view.html">S-만물상회</a></li>
+                                        <li><a href="sub4_2_view.html">이 달의 추천</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub5_1_view.html">동행 퀴즈</a></li>
+                                        <li><a href="sub5_2_view.html">SEMA가 있어 좋다</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu">
+                            <a class="line" href="javascript:;">Life & Culture</a>
+                            <div class="sub_menu">
+                                <div class="sub_menu_inner">
+                                    <ul class="sub">
+                                        <li><a href="sub1_1_view.html">SEMA 스페셜</a></li>
+                                        <li><a href="sub1_2_view.html">쉽게 보는 상품</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub2_1_view.html">SEMA는 사람들</a></li>
+                                        <li><a href="sub2_2_view.html">SEMA는 지금1</a></li>
+                                        <li><a href="sub2_3_view.html">SEMA는 지금2</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub3_1_view.html">행복한 S빌리지</a></li>
+                                        <li><a href="sub3_2_view.html">반가운 새 가족</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub4_1_view.html">S-만물상회</a></li>
+                                        <li><a href="sub4_2_view.html">이 달의 추천</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub5_1_view.html">동행 퀴즈</a></li>
+                                        <li><a href="sub5_2_view.html">SEMA가 있어 좋다</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu">
+                            <a href="javascript:;">Enjoy SEMA</a>
+                            <div class="sub_menu">
+                                <div class="sub_menu_inner">
+                                    <ul class="sub">
+                                        <li><a href="sub1_1_view.html">SEMA 스페셜</a></li>
+                                        <li><a href="sub1_2_view.html">쉽게 보는 상품</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub2_1_view.html">SEMA는 사람들</a></li>
+                                        <li><a href="sub2_2_view.html">SEMA는 지금1</a></li>
+                                        <li><a href="sub2_3_view.html">SEMA는 지금2</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub3_1_view.html">행복한 S빌리지</a></li>
+                                        <li><a href="sub3_2_view.html">반가운 새 가족</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub4_1_view.html">S-만물상회</a></li>
+                                        <li><a href="sub4_2_view.html">이 달의 추천</a></li>
+                                    </ul>
+                                    <ul class="sub">
+                                        <li><a href="sub5_1_view.html">동행 퀴즈</a></li>
+                                        <li><a href="sub5_2_view.html">SEMA가 있어 좋다</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>  
+                </div>
+            </header>
+        </section>
+        <!-- <section class="section_1">
+            <div class="event_img">
+                <img src="https://www.sema.or.kr/webzine/202306/images/main/event_img.png" alt="이벤트 이미지">
+                <div class="bt_event"><a href="javascript:;">이벤트 참여하기</a></div>
+            </div>
+        </section> -->
+        <section class="section_2 pt_80 pb_60">
+            <div class="section_inner">
+                <h2 class="tit_img pb_50"><img src="https://www.sema.or.kr/webzine/202306/images/main/tit_img1.png" alt="스페셜 이슈"></h2>
+                <div class="box_wrap">
+                    <div class="box box_2 box_border">
+                        <div class="box_img">
+                            <a href="sub1_1_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section2_thumb1.png" alt="세마 스페셜 썸네일">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>SEMA 스페셜</h4>
+                            <p>과학기술인공제회가 꿈꾸는 미래, <br>
+                                ‘N-SEMA 2033’</p>
+                        </div>
+                        <span><a href="sub1_1_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail_w.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                    <div class="box box_2 box_border">
+                        <div class="box_img">
+                            <a href="sub1_2_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section2_thumb2.png" alt="쉽게보는 뉴스 썸네일">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>쉽게 보는 상품</h4>
+                            <p>노후를 풍요롭게 준비하는 적금, <br>
+                                적립형공제급여<br><br></p>
+                        </div>
+                        <span><a href="sub1_2_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail_w.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section_3 pt_60 pb_60">
+            <div class="section_inner">
+                <h2 class="tit_img pb_50"><img src="https://www.sema.or.kr/webzine/202306/images/main/tit_img2.png" alt="인사이드 세마"></h2>
+                <!--<div class="box_wrap">
+                    <div class="box box_2 box_border">
+                        <div class="box_img">
+                            <a href="sub2_2_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section3_thumb1.png" alt="세마는 지금1">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>SEMA는 지금1</h4>
+                            <p>건강할 때 더 편하게 즐기자! <br>
+                                ‘사이언스 빌리지 초청 투어’</p>
+                        </div>
+                        <span><a href="sub2_2_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail_w.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                    <div class="box box_2 box_border">
+                        <div class="box_img">
+                            <a href="sub2_3_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section3_thumb2.png" alt="세마는 지금2">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>SEMA는 지금2</h4>
+                            <p>과학기술인공제회, 재해복구 시스템 구축 추진 <br>
+                                한국과학기술정보연구원과 업무협약 체결</p>
+                        </div>
+                        <span><a href="sub2_3_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail_w.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                </div>-->
+                <div class="box_wrap">
+                    <div class="box box_1 box_border">
+                        <div class="box_img">
+                            <a href="sub2_1_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section3_thumb1.png" alt="세마 사람들 썸네일">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>SEMA 사람들</h4>
+                            <p>대덕복지센터가 제 역할을 <br>
+                                할 수 있도록 든든히 지원하는 <br>
+                                대덕복지센터 총무팀</p>
+                        </div>
+                        <span><a href="sub2_1_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                    <div class="box box_1 box_border">
+                        <div class="box_img">
+                            <a href="sub2_2_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section3_thumb2.png" alt="세마는 지금1 썸네일">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>SEMA는 지금1</h4>
+                            <p>과학기술인공제회, <br>
+                                창립 20주년 맞아 과학기술인 <br>
+                                복지증진 유공자 초청 기념식 개최</p>
+                        </div>
+                        <span><a href="sub2_2_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                    <div class="box box_1 box_border">  
+                        <div class="box_img">
+                            <a href="sub2_3_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section3_thumb3.png" alt="세마는 지금2 썸네일">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>SEMA는 지금2</h4>
+                            <p>과학기술인공제회, <br>
+                                창립 20주년 행사 개최<br><br></p>
+                        </div>
+                        <span><a href="sub2_3_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section_4 pt_60 pb_60">
+            <div class="section_inner">
+                <h2 class="tit_img pb_50"><img src="https://www.sema.or.kr/webzine/202306/images/main/tit_img3.png" alt="세마플러스"></h2>
+                <div class="box_wrap">
+                    <div class="box box_2">
+                        <div class="box_img">
+                            <a href="sub3_1_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section4_thumb1.png" alt="S 빌리지 사람들 썸네일 이미지">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>행복한 S빌리지</h4>
+                            <p>“바둑은 두뇌 회전과 화합을 돕는 오락입니다.” <br>
+                                사이언스빌리지 바둑동호회</p>
+                        </div>
+                        <span><a href="sub3_1_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail_w.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                    <div class="box box_2">
+                        <div class="box_img">
+                            <a href="sub3_2_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section4_thumb2.png" alt="돈 버는 경제 썸네일">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>반가운 새 가족</h4>
+                            <p>공제회의 새로운 회원 기관을 소개합니다!<br><br></p>
+                        </div>
+                        <span><a href="sub3_2_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail_w.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section_5 pt_60 pb_60">
+            <div class="section_inner">
+                <h2 class="tit_img pb_50"><img src="https://www.sema.or.kr/webzine/202306/images/main/tit_img4.png" alt="라이프 앤 컬쳐"></h2>
+                <div class="box_wrap">
+                    <div class="box box_2 box_border">
+                        <div class="box_img">
+                            <a href="sub4_1_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section5_thumb1.png" alt="돈 버는 경제 썸네일">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>S-만물상회</h4>
+                            <p>모기 쫓는 다양한 기술들, 효과는 과연? <br><br></p>
+                        </div>
+                        <span><a href="sub4_1_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail_w.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                    <div class="box box_2 box_border">
+                        <div class="box_img">
+                            <a href="sub4_2_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section5_thumb2.png" alt="이 달의 추천 썸네일">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>이달의 추천</h4>
+                            <p>챗GPT, 적이 아닌 친구로 지내는 방법<br><br></p>
+                        </div>
+                        <span><a href="sub4_2_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail_w.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section_6 pt_60 pb_60">
+            <div class="section_inner">
+                <h2 class="tit_img pb_50"><img src="https://www.sema.or.kr/webzine/202306/images/main/tit_img5.png" alt="엔조이 세마"></h2>
+                <div class="box_wrap">
+                    <div class="box box_2 bg_w">
+                        <div class="box_img">
+                            <a href="sub5_1_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section6_thumb1.png" alt="동행 퀴즈 이벤트 썸네일">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>동행 퀴즈</h4>
+                            <p>SEMA 웹진의 기사를 읽고 <br>퀴즈를 맞춰보세요</p>
+                        </div>
+                        <span><a href="sub5_1_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                    <div class="box box_2 bg_w">
+                        <div class="box_img">
+                            <a href="sub5_2_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section6_thumb2.png" alt="이벤트2">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>SEMA가 있어 좋다</h4>
+                            <p>“과학기술인으뜸적금, 정말 좋은데 <br>
+                                어떻게 표현할 방법이 없네요!”</p>
+                        </div>
+                        <span><a href="sub5_2_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>
+                    <!--<div class="box box_1 bg_w">
+                        <div class="box_img">
+                            <a href="sub5_3_view.html">
+                                <img src="https://www.sema.or.kr/webzine/202306/images/main/section6_thumb3.png" alt="sema와 함께하는 행복여행">
+                            </a>
+                        </div>
+                        <div class="box_txt">
+                            <h4>SEMA와 함께하는 행복여행</h4>
+                            <p>회원 여러분의 추억이 담긴 <br>곳으로 여행을 보내드립니다! <br><br></p>
+                        </div>
+                        <span><a href="sub5_3_view.html"><img src="https://www.sema.or.kr/webzine/202306/images/main/bt_detail.png" alt="기사 자세히 보기 버튼"></a></span>
+                    </div>-->
+                </div>
+            </div>
+        </section>
+        <section class="section_7 pt_60 pb_60">
+            <div class="section_inner">
+                <h2 class="tit_img pb_50"><img src="https://www.sema.or.kr/webzine/202306/images/main/tit_img6.png" alt="세마 뉴스"></h2>
+                <div class="news_wrap">
+                    <div class="news">
+                        <a href="https://www.sema.or.kr/wlfare/bbs/B0000022/view.do?nttId=99843&menuNo=400009&optn1=W&pageIndex=1" target="_blank">
+                            <img src="https://www.sema.or.kr/webzine/202306/images/main/news1.png" alt="뉴스1">
+                        </a>
+                    </div>
+                    <div class="news">
+                        <a href="https://www.sema.or.kr/sema/bbs/B0000022/view.do?menuNo=200017&nttId=99325&optn1=S" target="_blank">
+                            <img src="https://www.sema.or.kr/webzine/202306/images/main/news2.png" alt="뉴스2">
+                        </a>
+                    </div>
+                    <div class="news">
+                        <a href="https://www.sema.or.kr/sema/bbs/B0000022/view.do?nttId=99116&menuNo=200017&optn1=S&pageIndex=1" target="_blank">
+                            <img src="https://www.sema.or.kr/webzine/202306/images/main/news3.png" alt="뉴스3">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="footer_icon pt_60 pb_60">
+            <div class="footer_inner">
+                <div class="icon_wrap">
+                    <div class="icon icon1">
+                        <a href="javascript:;"><img src="https://www.sema.or.kr/webzine/202306/images/main/footer_icon1.png" alt="과학기술연금"></a>
+                    </div>
+                    <div class="icon icon2">
+                        <a href="javascript:;"><img src="https://www.sema.or.kr/webzine/202306/images/main/footer_icon2.png" alt="적립형공제급여사업"></a>
+                    </div>
+                    <div class="icon icon3">
+                        <a href="javascript:;"><img src="https://www.sema.or.kr/webzine/202306/images/main/footer_icon3.png" alt="목돈급여사업"></a>
+                    </div>
+                    <div class="icon icon4">
+                        <a href="javascript:;"><img src="https://www.sema.or.kr/webzine/202306/images/main/footer_icon4.png" alt="과학기술인으뜸적금"></a>
+                    </div>
+                    <div class="icon icon5">
+                        <a href="javascript:;"><img src="https://www.sema.or.kr/webzine/202306/images/main/footer_icon5.png" alt="복지사업"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="section_inner">
+                <div class="logo2"><img src="https://www.sema.or.kr/webzine/202306/images/main/logo2.png" alt="b_logo"></div>
+                <div class="footer_center_wrap">
+                    <p class="address">06223 서울시 강남구 논현로 430(역삼동 726) 아세아타워 15층</p>
+                    <p class="e-mail">news@sema.or.kr  |  <span class="p_num">02)3469-7777,7799</span></p>
+                </div>
+                <div class="footer_right_wrap">
+                    <div class="sns_icon_wrap">
+                        <div class="icon_fb"><a href="https://www.facebook.com/happysema0000" target="_blank" rel="noopener noreferrer"><img src="https://www.sema.or.kr/webzine/202306/images/main/sns_icon_fb.png" alt="페이스북 아이콘"></a></div>
+                        <div class="icon_yt"><a href="https://www.youtube.com/channel/UC50Bs54B6w6wP0wst3E5Fgw/featured" target="_blank" rel="noopener noreferrer"><img src="https://www.sema.or.kr/webzine/202306/images/main/sns_icon_yt.png" alt="유튜브" 아이콘"></a></div>
+                        <div class="icon_nv"><a href="http://blog.naver.com/happysema" target="_blank" rel="noopener noreferrer"><img src="https://www.sema.or.kr/webzine/202306/images/main/sns_icon_nv.png" alt="네이버 블로그 아이콘"></a></div>
+                    </div>
+                    <div class="select_wrap" style="width:120px; margin-left: -456px;">
+                        <!-- <select name="지난호 웹진 보기" onchange="if(this.value != '')window.open(this.value);"> -->
+                        <!-- </select> -->
+                        <iframe id="footer_prev" src="https://www.sema.or.kr/webzine/view_webzine.html" name="webzine_view" border="0" frameborder="0" framespacing="0" marginheight="0" marginwidth="0" scrolling="no" vspace="0" allowtransparency="true" width="630" height="50" title="webzine_view" style="display: inline-block;"></iframe>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="copyright">© Copyright 과학기술인공제회. All rights reserved.</div>
+        </div>
+    </footer>
     </div>
 </body>
 </html>
