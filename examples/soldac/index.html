@@ -45,7 +45,7 @@
         <header>
             <div class="gnb">
                 <h1 class="logo">
-                    <a href="javascript:;">
+                    <a href="javascript:return false;">
                         <img src="images/logo.png" alt="메인로고">
                     </a>
                 </h1>
@@ -499,6 +499,25 @@
             </div>
             <span class="copyright">Copyright ⓒ soldoc.co.kr All rights reserved.</span>
         </footer>
+    </div>
+    <style>
+        .float-menu {
+            position:fixed;
+            right:2rem;
+            bottom:3rem;
+            background:#000;
+        }
+        .float-menu a {
+            display:block;
+            padding:0.5rem;
+            color:#fff;
+        }
+        .float-menu a:hover {
+            color: #ddd;
+        }
+    </style>
+    <div class="float-menu">
+        <a href="/">HOME</a>
     </div>
 </body>
 </html>
